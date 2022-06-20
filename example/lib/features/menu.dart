@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:inno_plugin/pigeon/pigeon.dart';
 
 import 'classic_plugin.dart';
+import 'pigeon_plugin.dart';
 
 class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
@@ -41,7 +43,13 @@ class Menu extends StatelessWidget {
                   'Pigeon plugin',
                   style: TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const PigeonPluginScreen(),
+                    ),
+                  );
+                },
               ),
               const SizedBox(height: 8),
               TextButton(
