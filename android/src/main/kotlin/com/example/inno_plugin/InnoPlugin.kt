@@ -24,6 +24,11 @@ class InnoPlugin : FlutterPlugin, MethodCallHandler {
         //pigeon
         val pigeonInnoPluginImpl = PigeonInnoPluginImpl()
         Pigeon.PigeonInnoPlugin.setup(flutterPluginBinding.binaryMessenger, pigeonInnoPluginImpl)
+
+        //view
+        flutterPluginBinding
+            .platformViewRegistry
+            .registerViewFactory("inno_plugin.view", InnoNativeViewFactory())
     }
 
     override fun onMethodCall(@NonNull call: MethodCall, @NonNull result: Result) {

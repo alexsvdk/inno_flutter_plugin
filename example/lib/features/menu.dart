@@ -3,6 +3,7 @@ import 'package:inno_plugin/pigeon/pigeon.dart';
 
 import 'classic_plugin.dart';
 import 'pigeon_plugin.dart';
+import 'view_plugin.dart';
 
 class Menu extends StatelessWidget {
   const Menu({Key? key}) : super(key: key);
@@ -57,7 +58,13 @@ class Menu extends StatelessWidget {
                   'Native view plugin',
                   style: TextStyle(fontSize: 20),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const ViewPluginPage(),
+                    ),
+                  );
+                },
               ),
               const Spacer(),
               const Text('Yandex X Innopolis · 2022'),
