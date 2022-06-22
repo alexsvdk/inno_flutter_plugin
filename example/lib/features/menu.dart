@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:inno_plugin/pigeon/pigeon.dart';
+import 'package:inno_plugin_example/features/ffi.dart';
 
 import 'classic_plugin.dart';
 import 'pigeon_plugin.dart';
@@ -48,6 +49,20 @@ class Menu extends StatelessWidget {
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (_) => const PigeonPluginScreen(),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 8),
+              TextButton(
+                child: const Text(
+                  'FFI example',
+                  style: TextStyle(fontSize: 20),
+                ),
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (_) => const FFIScreen(),
                     ),
                   );
                 },
